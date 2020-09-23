@@ -156,31 +156,33 @@ export default class TabOption extends PureComponent<Props> {
           >
             {text}
           </Text>
-          <View
-            style={[
-              styles.tabBadgeContainerStyle,
-              tabBadgeContainerStyle,
-              isTabActive
-                ? [
-                  styles.activeTabBadgeContainerStyle,
-                  activeTabBadgeContainerStyle,
-                ]
-                : {},
-            ]}
-          >
-            <Text
+          {badge !== '' && (
+            <View
               style={[
-                styles.tabBadgeStyle,
-                tabBadgeStyle,
+                styles.tabBadgeContainerStyle,
+                tabBadgeContainerStyle,
                 isTabActive
-                  ? [styles.activeTabBadgeStyle, activeTabBadgeStyle]
+                  ? [
+                    styles.activeTabBadgeContainerStyle,
+                    activeTabBadgeContainerStyle,
+                  ]
                   : {},
               ]}
-              allowFontScaling={allowFontScaling}
             >
-              {badge || 0}
-            </Text>
-          </View>
+              <Text
+                style={[
+                  styles.tabBadgeStyle,
+                  tabBadgeStyle,
+                  isTabActive
+                    ? [styles.activeTabBadgeStyle, activeTabBadgeStyle]
+                    : {},
+                ]}
+                allowFontScaling={allowFontScaling}
+              >
+                {badge}
+              </Text>
+            </View>
+          )}
         </View>
       </TouchableOpacity>
     )

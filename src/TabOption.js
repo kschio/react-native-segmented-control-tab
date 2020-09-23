@@ -2,16 +2,14 @@
 
 import React, { PureComponent } from 'react'
 import {
-  View,
-  TouchableOpacity,
   StyleSheet,
   Text,
+  TouchableOpacity,
+  View,
 } from 'react-native'
-
-
 import type {
-  ViewStyleProp,
   TextStyleProp,
+  ViewStyleProp,
 } from 'react-native/Libraries/StyleSheet/StyleSheet'
 
 type Props = {
@@ -180,7 +178,7 @@ export default class TabOption extends PureComponent<Props> {
               ]}
               allowFontScaling={allowFontScaling}
             >
-              {badge}
+              {badge || 0}
             </Text>
           </View>
         </View>

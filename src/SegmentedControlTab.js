@@ -1,14 +1,13 @@
 /* @flow */
 import React, { PureComponent } from 'react'
 import {
-  View, StyleSheet,
+  StyleSheet,
+  View,
 } from 'react-native'
-
 import type {
-  ViewStyleProp,
   TextStyleProp,
+  ViewStyleProp,
 } from 'react-native/Libraries/StyleSheet/StyleSheet'
-
 import TabOption from './TabOption'
 
 type Props = {
@@ -157,6 +156,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
     if (!enabled) {
       tabsContainerStyles.push(tabsContainerDisableStyle)
     }
+
     return (
       <View style={tabsContainerStyles} removeClippedSubviews={false}>
         {values && values.map((item, index) => {
@@ -168,7 +168,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
             <TabOption
               key={item}
               index={index}
-              badge={badges && badges[index] ? badges[index] : false}
+              badge={badges && badges[index] || typeof badges[index] ==='number' ? badges[index] : ''}
               isTabActive={
                 multiple
                   ? selectedIndices.includes(index)

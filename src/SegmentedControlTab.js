@@ -168,7 +168,7 @@ export default class SegmentedControlTab extends PureComponent<Props> {
             <TabOption
               key={item}
               index={index}
-              badge={badges && badges[index] || typeof badges[index] ==='number' ? badges[index] : ''}
+              badge={badges && badges[index] || typeof badges[index] === 'number' ? badges[index] : ''}
               isTabActive={
                 multiple
                   ? selectedIndices.includes(index)
